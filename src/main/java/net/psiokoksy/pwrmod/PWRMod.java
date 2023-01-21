@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.psiokoksy.pwrmod.item.ModCreativeModeTab;
 import net.psiokoksy.pwrmod.item.ModItems;
 import org.slf4j.Logger;
 
@@ -36,7 +38,6 @@ public class PWRMod
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-        modEventBus.addListener(this::addCreativeTab);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -46,22 +47,17 @@ public class PWRMod
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-
+        if(event.getTab()== ModCreativeModeTab.PWR_TAB){
+            event.accept(ModItems.pwr_miecz.get());
+            event.accept(ModItems.pwr_kilof.get());
+        }
+        if(event.getTab()== CreativeModeTabs.TOOLS_AND_UTILITIES){
+            event.accept(ModItems.pwr_kilof.get());
+        }
+        if(event.getTab()== CreativeModeTabs.COMBAT){
+            event.accept(ModItems.pwr_miecz.get());
+        }
     }
-    public void addCreativeTab(CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "tab"), builder ->
-
-                builder.title(Component.translatable(MOD_ID+"tab"))
-
-                        .icon(() -> new ItemStack(ModItems.pwr_miecz.get()))
-
-                        .displayItems((enabledFlags, populator, hasPermissions) -> {
-                            populator.accept(ModItems.pwr_miecz.get());
-                            populator.accept(ModItems.pwr_kilof.get());
-                        })
-        );
-    }
-
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
