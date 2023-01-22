@@ -1,6 +1,10 @@
 {
   "item.pwrmod.pwr_miecz": "Miecz PWRowca",
   "item.pwrmod.pwr_kilof": "Kilof PWRowca",
+  "item.pwrmod.pwr_chestplate": "Klata PWRowca",
+  "item.pwrmod.pwr_leggins": "Leginsy PWRowca",
+  "item.pwrmod.pwr_boots": "Buty PWRowca",
+  "item.pwrmod.pwr_cap": "Czapka PWRowca",
 
-  "itemGroup.pwrmodtab": "Itemy PWRu"
+  "itemGroup.pwrmod_tab": "Itemy PWRu"
 }

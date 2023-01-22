@@ -2,10 +2,8 @@ package net.psiokoksy.pwrmod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -17,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.psiokoksy.pwrmod.item.ModCreativeModeTab;
 import net.psiokoksy.pwrmod.item.ModItems;
+import net.psiokoksy.pwrmod.painting.ModPaintings;
 import org.slf4j.Logger;
 
 @Mod(PWRMod.MOD_ID)
@@ -32,12 +31,15 @@ public class PWRMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
-        // Register the commonSetup method for modloading
+        ModPaintings.register(modEventBus);
+
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -48,16 +50,26 @@ public class PWRMod
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
         if(event.getTab()== ModCreativeModeTab.PWR_TAB){
-            event.accept(ModItems.pwr_miecz.get());
-            event.accept(ModItems.pwr_kilof.get());
+            event.accept(ModItems.pwr_miecz);
+            event.accept(ModItems.pwr_kilof);
+            event.accept(ModItems.pwr_boots);
+            event.accept(ModItems.pwr_cap);
+            event.accept(ModItems.pwr_chestplate);
+            event.accept(ModItems.pwr_leggins);
         }
         if(event.getTab()== CreativeModeTabs.TOOLS_AND_UTILITIES){
-            event.accept(ModItems.pwr_kilof.get());
+            event.accept(ModItems.pwr_kilof);
         }
-        if(event.getTab()== CreativeModeTabs.COMBAT){
-            event.accept(ModItems.pwr_miecz.get());
+        if(event.getTab()== CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.pwr_miecz);
+            event.accept(ModItems.pwr_cap);
+            event.accept(ModItems.pwr_chestplate);
+            event.accept(ModItems.pwr_leggins);
+            event.accept(ModItems.pwr_boots);
         }
+
     }
+
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
