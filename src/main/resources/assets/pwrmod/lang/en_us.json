@@ -7,6 +7,10 @@
   "item.pwrmod.piwo_seeds": "Nasiona Piwa",
   "item.pwrmod.piwo_male": "Piwo 0,3L",
   "item.pwrmod.piwo_duze": "Duze Piwo",
+  "item.pwrmod.pwr_chestplate": "Klata PWRowca",
+  "item.pwrmod.pwr_leggins": "Leginsy PWRowca",
+  "item.pwrmod.pwr_boots": "Buty PWRowca",
+  "item.pwrmod.pwr_cap": "Czapka PWRowca",
 
   "block.pwrmod.beczka_piwa": "Beczka piwa z PWRu"
 

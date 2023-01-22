@@ -5,6 +5,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.psiokoksy.pwrmod.PWRMod;
+import net.psiokoksy.pwrmod.armor.ModArmorMaterials;
 import net.psiokoksy.pwrmod.block.ModBlocks;
 
 import static net.psiokoksy.pwrmod.PWRMod.MOD_ID;
@@ -40,6 +42,17 @@ public class ModItems {
     public static final RegistryObject<Item> piwo_duze =
                 ITEMS.register("piwo_duze", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(2f).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 600, 2), 1f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS,40),1f).build())));
 
+    public static final RegistryObject<ArmorItem> pwr_chestplate = ITEMS.register("pwr_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.COPPER, EquipmentSlot.CHEST,new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> pwr_leggins = ITEMS.register("pwr_leggins",
+            () -> new ArmorItem(ModArmorMaterials.COPPER,EquipmentSlot.LEGS,new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> pwr_cap = ITEMS.register("pwr_cap",
+            () -> new ArmorItem(ModArmorMaterials.COPPER,EquipmentSlot.HEAD,new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> pwr_boots = ITEMS.register("pwr_boots",
+            () -> new ArmorItem(ModArmorMaterials.COPPER,EquipmentSlot.FEET,new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

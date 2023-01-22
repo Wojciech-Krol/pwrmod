@@ -20,6 +20,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.psiokoksy.pwrmod.block.ModBlocks;
 import net.psiokoksy.pwrmod.item.ModCreativeModeTab;
 import net.psiokoksy.pwrmod.item.ModItems;
+import net.psiokoksy.pwrmod.painting.ModPaintings;
 import org.slf4j.Logger;
 
 @Mod(PWRMod.MOD_ID)
@@ -36,6 +37,7 @@ public class PWRMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModPaintings.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -61,6 +63,10 @@ public class PWRMod
             event.accept(ModItems.piwo_male.get());
             event.accept(ModItems.piwo_duze.get());
             event.accept(ModItems.piwo_seeds.get());
+            event.accept(ModItems.pwr_boots);
+            event.accept(ModItems.pwr_cap);
+            event.accept(ModItems.pwr_chestplate);
+            event.accept(ModItems.pwr_leggins);
 
         }
         if(event.getTab()== CreativeModeTabs.TOOLS_AND_UTILITIES){
@@ -71,6 +77,10 @@ public class PWRMod
         }
         if(event.getTab()== CreativeModeTabs.COMBAT){
             event.accept(ModItems.pwr_miecz.get());
+            event.accept(ModItems.pwr_boots);
+            event.accept(ModItems.pwr_cap);
+            event.accept(ModItems.pwr_chestplate);
+            event.accept(ModItems.pwr_leggins);
         }
         if(event.getTab()== CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.pwr_beczkapiwa.get());
