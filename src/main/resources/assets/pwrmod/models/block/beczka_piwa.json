@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "pwrmod:block/pwr_beczkapiwabot",
+    "east": "pwrmod:block/pwr_beczkapiwaside",
+    "north": "pwrmod:block/pwr_beczkapiwaside",
+    "particle": "pwrmod:block/pwr_beczkapiwaside",
+    "south": "pwrmod:block/pwr_beczkapiwaside",
+    "up": "pwrmod:block/pwr_beczkapiwatopopen",
+    "west": "pwrmod:block/pwr_beczkapiwaside"
+  }
+
+}

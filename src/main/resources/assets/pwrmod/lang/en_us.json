@@ -1,6 +1,13 @@
 {
   "item.pwrmod.pwr_miecz": "Miecz PWRowca",
   "item.pwrmod.pwr_kilof": "Kilof PWRowca",
+  "item.pwrmod.pwr_siekiera": "Siekiera PWRowca",
+  "item.pwrmod.pwr_lopata": "Lopata PWRowca",
+  "item.pwrmod.pwr_motyka": "Motyka PWRowca",
+  "item.pwrmod.piwo_seeds": "Nasiona Piwa",
+  "item.pwrmod.piwo_male": "Piwo 0,3L",
+  "item.pwrmod.piwo_duze": "Duze Piwo",
 
-  "itemGroup.pwrmodtab": "Itemy PWRu"
+  "block.pwrmod.beczka_piwa": "Beczka piwa z PWRu"
+
 }

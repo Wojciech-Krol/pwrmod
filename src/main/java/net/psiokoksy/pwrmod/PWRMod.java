@@ -2,6 +2,8 @@ package net.psiokoksy.pwrmod;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -15,6 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.psiokoksy.pwrmod.block.ModBlocks;
 import net.psiokoksy.pwrmod.item.ModCreativeModeTab;
 import net.psiokoksy.pwrmod.item.ModItems;
 import org.slf4j.Logger;
@@ -32,6 +35,7 @@ public class PWRMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -50,12 +54,31 @@ public class PWRMod
         if(event.getTab()== ModCreativeModeTab.PWR_TAB){
             event.accept(ModItems.pwr_miecz.get());
             event.accept(ModItems.pwr_kilof.get());
+            event.accept(ModItems.pwr_siekiera.get());
+            event.accept(ModItems.pwr_lopata.get());
+            event.accept(ModItems.pwr_motyka.get());
+            event.accept(ModBlocks.pwr_beczkapiwa.get());
+            event.accept(ModItems.piwo_male.get());
+            event.accept(ModItems.piwo_duze.get());
+            event.accept(ModItems.piwo_seeds.get());
+
         }
         if(event.getTab()== CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.accept(ModItems.pwr_kilof.get());
+            event.accept(ModItems.pwr_siekiera.get());
+            event.accept(ModItems.pwr_lopata.get());
+            event.accept(ModItems.pwr_motyka.get());
         }
         if(event.getTab()== CreativeModeTabs.COMBAT){
             event.accept(ModItems.pwr_miecz.get());
+        }
+        if(event.getTab()== CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.pwr_beczkapiwa.get());
+        }
+        if(event.getTab()== CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(ModItems.piwo_male.get());
+            event.accept(ModItems.piwo_duze.get());
+            event.accept(ModItems.piwo_seeds.get());
         }
     }
 

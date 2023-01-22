@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "pwrmod:item/pwr_kilof"
+    "layer0": "pwrmod:item/pwr_kilof",
+    "layer1": "pwrmod:item/pwr_kilof"
   }
 }

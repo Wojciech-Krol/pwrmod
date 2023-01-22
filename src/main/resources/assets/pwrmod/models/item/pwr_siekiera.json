@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "pwrmod:item/pwr_siekiera",
+    "layer1": "pwrmod:item/pwr_siekiera"
+  }
+}
