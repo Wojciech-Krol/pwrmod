@@ -36,9 +36,9 @@ public class ModItems {
             ITEMS.register("piwo_seeds", () -> new ItemNameBlockItem(ModBlocks.piwo_crop.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> piwo_male =
-            ITEMS.register("piwo_male", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 500, 2), 1f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS,40),1f).build())));
+            ITEMS.register("piwo_male", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 300, 1), 1f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS,40),1f).build())));
     public static final RegistryObject<Item> piwo_duze =
-                ITEMS.register("piwo_duze", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(2f).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 1000, 3), 1f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS,40),1f).build())));
+                ITEMS.register("piwo_duze", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(2f).effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 600, 2), 1f).effect(() -> new MobEffectInstance(MobEffects.BLINDNESS,40),1f).build())));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

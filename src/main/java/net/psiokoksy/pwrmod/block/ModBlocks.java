@@ -23,7 +23,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
 
     public static final RegistryObject<Block> pwr_beczkapiwa = registerBlock("beczka_piwa",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0f).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BARREL).strength(2.0f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> piwo_crop = BLOCKS.register("piwo_crop",
             () -> new PiwoCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));

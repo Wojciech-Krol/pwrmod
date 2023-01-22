@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "pwrmod:item/pwr_lopata",
-    "layer1": "pwrmod:item/pwr_lopata"
+    "layer0": "pwrmod:item/lopata",
+    "layer1": "pwrmod:item/lopata"
   }
 }

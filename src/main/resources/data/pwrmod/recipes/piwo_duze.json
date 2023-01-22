@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "pwrmod:piwo_male"
+    }
+  },
+  "pattern": [
+    " # ",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "pwrmod:piwo_duze"
+  }
+}

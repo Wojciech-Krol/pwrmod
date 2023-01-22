@@ -2,6 +2,6 @@
   "parent": "minecraft:block/crop",
   "render_type": "cutout",
   "textures": {
-    "crop": "minecraft:blocks/wheat_stage_1"
+    "crop": "pwrmod:block/piwostage3"
   }
 }
